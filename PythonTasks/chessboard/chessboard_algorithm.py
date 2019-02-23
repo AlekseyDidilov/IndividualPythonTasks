@@ -4,7 +4,7 @@ class Chessboard:
         self.length = length
         self.width = width
 
-    def chessboard_rendering(self):
+    def chessboard_rendering(self) -> None:
         for line_number in range(self.length):
             if line_number % 2 == 0:
                 print(("* " * (self.width // 2)) + ("*" * (self.width % 2)))
