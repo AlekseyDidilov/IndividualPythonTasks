@@ -15,6 +15,12 @@ class GreaterThanZero(Requirements):
         return value > 0
 
 
+class LessOneMillion(Requirements):
+
+    def passed(self, value: int) -> bool:
+        return value < 1000000
+
+
 class CheckRequirements(Requirements):
 
     def __init__(self, *requirements: Any):
