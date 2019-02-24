@@ -11,11 +11,11 @@ class Input(ABC):
 
 class AskInput(Input):
 
-    def __init__(self, prompt: str):
-        self._q = prompt
+    def __init__(self, question: str):
+        self._question = question
 
     def value(self) -> Any:
-        return input(self._q + '\n')
+        return input(self._question + '\n')
 
 
 class IntInput(Input):
