@@ -1,6 +1,7 @@
 from validation.validation_value import (
     CheckRequirements,
-    GreaterThanZero
+    GreaterThanZero,
+    LessOneMillion
 )
 from input.input_value import AskInput, IntInput
 from digits2text.digits2text_algorithm import TranslatorInText
@@ -8,7 +9,7 @@ from digits2text.digits2text_algorithm import TranslatorInText
 
 if __name__ == "__main__":
     required_number = IntInput(AskInput("Please, enter required number")).value()
-    check_number = CheckRequirements(GreaterThanZero())
+    check_number = CheckRequirements(GreaterThanZero(), LessOneMillion())
 
     if check_number.passed(required_number):
         new_translation = TranslatorInText(required_number).numbers_to_text()
