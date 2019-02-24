@@ -29,6 +29,9 @@ class CheckRequirements(Requirements):
     def passed(self, value: int) -> bool:
         for requirement in self._test:
             if not requirement.passed(value):
-                print(f"{requirement.__class__.__name__} is failed.")
+                print(
+                      f"{requirement.__class__.__name__} is failed."
+                      f"Please, run program again!"
+                )
                 return False
         return True
