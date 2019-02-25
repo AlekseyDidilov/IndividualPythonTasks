@@ -32,13 +32,13 @@ class TranslatorInText:
     def thousands(self, number: int) -> str:
         divided_thousand = number // 1000
         if (10 <= divided_thousand) and (10 <= (int((str(divided_thousand))[-2] +
-                                                  (str(divided_thousand))[-1])) <= 19):
+                                                    (str(divided_thousand))[-1])) <= 19):
 
             thousand = self.hundreds(divided_thousand) + " тысяч"
         else:
             digit = int((str(divided_thousand))[-1])
             thousand = self.hundreds(divided_thousand) + " тыся" + \
-                       DIGITS["thousands_ends"][digit]
+                        DIGITS["thousands_ends"][digit]
 
         thousand = thousand.replace("один ", "одна ")
         thousand = thousand.replace("два ", "две ")
