@@ -1,10 +1,10 @@
-from validation.validation_value import (
+from models.validation_value import (
     CheckRequirements,
     GreaterThanZero,
     LessOneMillion
 )
-from input.input_value import AskInput, IntInput
-from digits2text.digits2text_algorithm import TranslatorInText
+from models.input_value import AskInput, IntInput
+from models.digits2text_algorithm import TranslatorInText
 
 
 if __name__ == "__main__":

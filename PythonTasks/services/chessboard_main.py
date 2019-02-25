@@ -1,10 +1,10 @@
-from validation.validation_value import (
+from models.validation_value import (
     CheckRequirements,
     GreaterThanZero
 )
-from input.input_value import AskInput, IntInput
+from models.input_value import AskInput, IntInput
 
-from chessboard.chessboard_algorithm import Chessboard
+from models.chessboard_algorithm import Chessboard
 
 
 if __name__ == '__main__':
