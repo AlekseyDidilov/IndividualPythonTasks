@@ -1,11 +1,11 @@
 from abc import ABC, abstractmethod
-from typing import Any
+from typing import Any, List
 
 
 class Requirements(ABC):
 
     @abstractmethod
-    def passed(self, value: Any) -> bool:
+    def passed(self, *value: Any) -> bool:
         pass
 
 
@@ -19,6 +19,38 @@ class LessOneMillion(Requirements):
 
     def passed(self, value: int) -> bool:
         return value < 1000000
+
+
+class SidesFloat(Requirements):
+
+    def passed(self, side_1: str, side_2: str, side_3: str) -> bool:
+        try:
+            float(side_1)
+            float(side_2)
+            float(side_3)
+            return True
+        except ValueError:
+            print("Incorrect data, input must be in float!")
+
+
+class SumTwoSides(Requirements):
+
+    def passed(self, side_1: str, side_2: str, side_3: str) -> bool:
+        return (float(side_1) + float(side_2) > float(side_3) and
+                float(side_1) + float(side_3) > float(side_2) and
+                float(side_2) + float(side_3) > float(side_1))
+
+
+class LessZero(Requirements):
+
+    def passed(self, side_1: str, side_2: str, side_3: str) -> bool:
+        return min(float(side_1), float(side_2), float(side_3)) > 0
+
+
+class StringLength(Requirements):
+
+    def passed(self, value: List) -> bool:
+        return len(value) == 4
 
 
 class CheckRequirements(Requirements):
