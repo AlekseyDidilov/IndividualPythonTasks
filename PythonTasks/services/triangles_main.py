@@ -6,7 +6,7 @@ from models.validation_value import (
 from models.input_value import AskInput, SplitInput
 from models.execution import NewExecution
 
-from models.triangles import Triangle, TriangleList
+from models.triangles_algorithm import Triangle, TriangleList
 
 
 if __name__ == '__main__':
