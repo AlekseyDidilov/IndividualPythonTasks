@@ -24,7 +24,7 @@ class SplitInput(Input):
         self._origin = origin
 
     def value(self) -> List:
-        return input(f"{self._origin}").split(",")
+        return (self._origin.value()).split(",")
 
 
 class IntInput(Input):
