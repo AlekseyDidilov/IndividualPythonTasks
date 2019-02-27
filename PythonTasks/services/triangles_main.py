@@ -32,11 +32,11 @@ if __name__ == '__main__':
             triangles_sorted.add_triangle(new_triangle)
         else:
             break
-        run_again = NewExecution(
+        new_app_run = NewExecution(
                                  "Do you want add new triangle?\n"
                                  "If yes, please type 'y' or 'yes'\n"
-                                ).choose_action()
-        if not run_again:
+                                 ).choose_action()
+        if not new_app_run:
             break
     triangles_sorted.print_triangles()
 
