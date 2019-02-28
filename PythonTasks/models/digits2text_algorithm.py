@@ -1,4 +1,4 @@
-from models.numbers import DIGITS
+from models.digits2text_numbers import DIGITS
 
 
 class TranslatorInText:
