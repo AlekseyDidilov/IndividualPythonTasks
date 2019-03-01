@@ -21,17 +21,17 @@ class TestTriangle:
 
 class TestTriangleList:
 
-    def test_add_triangle_invalid_output(self):
+    def test_add_triangle_invalid_square(self):
         triangle = ["first", 2.9]
         added_triangle = TriangleList().add_triangle(["first", 3.9])
         assert added_triangle != triangle
 
-    def test_add_triangle_alpha_output(self):
+    def test_add_triangle_alpha_square(self):
         triangle = ["first", 2.1]
         added_triangle = TriangleList().add_triangle(["first", "second"])
         assert added_triangle != triangle
 
-    def test_add_triangle_valid_output(self):
+    def test_add_triangle_valid_square(self):
         triangle = ["first", 2.9]
         added_triangle = TriangleList().add_triangle(["first", 2.9])
         assert added_triangle == triangle
