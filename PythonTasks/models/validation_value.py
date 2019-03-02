@@ -21,6 +21,15 @@ class LessOneMillion(Requirements):
         return value < 1000000
 
 
+class IntArgs(Requirements):
+
+    def passed(self, *value: str) -> bool:
+        try:
+            return isinstance(int(*value), int)
+        except ValueError:
+            return False
+
+
 class SidesFloat(Requirements):
 
     def passed(self, side_1: str, side_2: str, side_3: str) -> bool:
