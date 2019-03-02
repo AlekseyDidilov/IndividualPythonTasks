@@ -1,64 +1,41 @@
-"""This program has been created to print all Fibonacci numbers
-that satisfy the constraint passed to the function:
-are in the specified range, or have the specified length."""
+from typing import List
 
 
-def fibonacci_number(end_number: int) -> list:
-    sequence = list()
-    number1, number2 = 0, 1
-    while True:
-        number1, number2 = number2, number1 + number2
-        length_number = str(number1)
-        if len(length_number) == end_number:
-            sequence.append(number1)
-        elif len(length_number) > end_number:
-            break
-    return sequence
+class FibonacciLength:
 
+    def __init__(self, number):
+        self._number = number
 
-def fibonacci_range(start_range: int, end_range: int) -> list:
-    sequence = list()
-    number_start1, number_start2 = 0, 1
-    number_end1, number_end2 = 0, 1
-    for _ in range(start_range - 1):
-        number_end1, number_end2 = number_end2, number_end1 + number_end2
-    for _ in range(end_range - 1):
-        number_start1, number_start2 = number_start2, number_start1 + number_start2
-        if number_start1 >= number_end1:
-            sequence.append(number_start1)
-    return sequence
-
-
-def is_valid(input_value: str) -> int:
-    while True:
-        try:
-            entered_value = int(input(f"Please, enter {input_value}: "))
-            if 0 <= entered_value <= 1000:
+    def fibonacci_calculation_sequence(self) -> List:
+        sequence = list()
+        number1, number2 = 0, 1
+        while True:
+            number1, number2 = number2, number1 + number2
+            length_number = str(number1)
+            if len(length_number) == self._number:
+                sequence.append(number1)
+            if len(length_number) > self._number:
                 break
-        except ValueError:
-            print("Please, enter integer")
-    return entered_value
+        return sequence
 
 
-def main():
-    first_value = is_valid("number")
-    while True:
-        try:
-            continue_input = input("If you want to continue enter - y, otherwise - n ")
-            if continue_input.lower() == "n":
-                fibonacci_list = fibonacci_number(first_value)
-                break
-            elif continue_input.lower() == "y":
-                second_value = is_valid("second number")
-                fibonacci_list = fibonacci_range(first_value, second_value)
-                break
-        except ValueError:
-            print("Please enter y or n ")
-    print(f"You've been got following fibonacci sequences: {fibonacci_list}")
+class FibonacciRange:
 
+    def __init__(self, start_range: int, end_range: int):
+        self._start_range = start_range
+        self._end_range = end_range
 
-if __name__ == '__main__':
-    main()
+    def fibonacci_range(self) -> List:
+        sequence = list()
+        number_start1, number_start2 = 0, 1
+        number_end1, number_end2 = 0, 1
+        for _ in range(self._start_range - 1):
+            number_end1, number_end2 = number_end2, number_end1 + number_end2
+        for _ in range(self._end_range - 1):
+            number_start1, number_start2 = number_start2, number_start1 + number_start2
+            if number_start1 >= number_end1:
+                sequence.append(number_start1)
+        return sequence
 
 
 
