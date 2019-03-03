@@ -21,11 +21,17 @@ class LessOneMillion(Requirements):
         return value < 1000000
 
 
+class LessOneHundred(Requirements):
+
+    def passed(self, value: int) -> bool:
+        return value < 100
+
+
 class IntArgs(Requirements):
 
-    def passed(self, *value: str) -> bool:
+    def passed(self, value: str) -> bool:
         try:
-            return isinstance(int(*value), int)
+            return isinstance(value, int)
         except ValueError:
             return False
 
