@@ -8,13 +8,13 @@ class FibonacciLength:
 
     def fibonacci_calculation_sequence(self) -> List:
         sequence = list()
-        number1, number2 = 0, 1
+        number_1, number_2 = 0, 1
         while True:
-            number1, number2 = number2, number1 + number2
-            length_number = str(number1)
-            if len(length_number) == self._number:
-                sequence.append(number1)
-            if len(length_number) > self._number:
+            number_1, number_2 = number_2, number_1 + number_2
+            number_length = str(number_1)
+            if len(number_length) == self._number:
+                sequence.append(number_1)
+            if len(number_length) > self._number:
                 break
         return sequence
 
@@ -25,16 +25,16 @@ class FibonacciRange:
         self._start_range = start_range
         self._end_range = end_range
 
-    def fibonacci_range(self) -> List:
+    def fibonacci_range_calculation(self) -> List:
         sequence = list()
-        number_start1, number_start2 = 0, 1
-        number_end1, number_end2 = 0, 1
+        start_num_1, start_num_2 = 0, 1
+        end_num_1, end_num_2 = 0, 1
         for _ in range(self._start_range - 1):
-            number_end1, number_end2 = number_end2, number_end1 + number_end2
+            end_num_1, end_num_2 = end_num_2, end_num_1 + end_num_2
         for _ in range(self._end_range - 1):
-            number_start1, number_start2 = number_start2, number_start1 + number_start2
-            if number_start1 >= number_end1:
-                sequence.append(number_start1)
+            start_num_1, start_num_2 = start_num_2, start_num_1 + start_num_2
+            if start_num_1 >= end_num_1:
+                sequence.append(start_num_1)
         return sequence
 
 
