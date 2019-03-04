@@ -6,7 +6,7 @@ class FibonacciLength:
     def __init__(self, number):
         self._number = number
 
-    def fibonacci_calculation_sequence(self) -> List:
+    def length_calculation(self) -> List:
         sequence = list()
         number_1, number_2 = 0, 1
         while True:
@@ -25,7 +25,7 @@ class FibonacciRange:
         self._start_range = start_range
         self._end_range = end_range
 
-    def fibonacci_range_calculation(self) -> List:
+    def range_calculation(self) -> List:
         sequence = list()
         start_num_1, start_num_2 = 0, 1
         end_num_1, end_num_2 = 0, 1
