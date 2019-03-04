@@ -18,7 +18,7 @@ if __name__ == '__main__':
     if len(required_number) == 1 and check_required_number.passed(
        (int(required_number[0]))):
         fibo_length = FibonacciLength(
-            int(required_number[0])).fibonacci_calculation_sequence()
+            int(required_number[0])).length_calculation()
 
         print(f"You've got next fibonacci sequence: {fibo_length}")
 
@@ -28,7 +28,7 @@ if __name__ == '__main__':
     ):
         fibo_range = FibonacciRange(int(required_number[0]),
                                     int(required_number[1])
-                                    ).fibonacci_range_calculation()
+                                    ).range_calculation()
 
         print(f"You've got next fibonacci sequence: {fibo_range}")
 
