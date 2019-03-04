@@ -30,5 +30,9 @@ If the user answers “y” or “yes” (case insensitive),the program will ask
 - read the number of occurrences of a line in a text file;
 - replace the string with another in the specified file.
 
-# Run application
+# Installation
 To run the program code from a file, you need to start working with Python3 and get access to the Python interpreter. Python is available on the Python Software Foundation https://www.python.org website. On website you need to download Python interpreter version 3.6 or higher.
+Also, please use pytest for the test execution.
+Before running any command, please install pytest, type in terminal:
+**pip install pytest**
+
