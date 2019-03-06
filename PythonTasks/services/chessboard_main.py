@@ -17,5 +17,7 @@ if __name__ == '__main__':
         new_chessboard = Chessboard(
                                     length_chessboard,
                                     width_chessboard
-                                   ).chessboard_rendering()
+                                   ).chessboard_building()
+        for chessboard_line in new_chessboard:
+            print(chessboard_line)
 
