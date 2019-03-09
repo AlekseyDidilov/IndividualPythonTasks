@@ -35,8 +35,10 @@ def method_hard(tickets_list: list) -> int:
 def is_valid(input_value: str) -> int:
     while True:
         try:
-            entered_value = int(input(f"Please, enter {input_value} between 0 to 1000000: "))
-            if 0 <= entered_value <= 1000000:
+            entered_value = int(
+                input(f"Please, enter {input_value} between 0 to 1000000: ")
+            )
+            if 0 <= entered_value <= 1_000_000:
                 break
         except ValueError:
             print("Please, enter integer between 0 to 1000000")
@@ -67,5 +69,5 @@ def main():
     )
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

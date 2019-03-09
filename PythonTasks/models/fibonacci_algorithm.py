@@ -2,11 +2,10 @@ from typing import List
 
 
 class FibonacciLength:
-
-    def __init__(self, number):
+    def __init__(self, number: int):
         self._number = number
 
-    def length_calculation(self) -> List:
+    def length_calculation(self) -> List[int]:
         sequence = list()
         number_1, number_2 = 0, 1
         while True:
@@ -20,12 +19,11 @@ class FibonacciLength:
 
 
 class FibonacciRange:
-
     def __init__(self, start_range: int, end_range: int):
         self._start_range = start_range
         self._end_range = end_range
 
-    def range_calculation(self) -> List:
+    def range_calculation(self) -> List[int]:
         sequence = list()
         start_num_1, start_num_2 = 0, 1
         end_num_1, end_num_2 = 0, 1
@@ -36,6 +34,3 @@ class FibonacciRange:
             if start_num_1 >= end_num_1:
                 sequence.append(start_num_1)
         return sequence
-
-
-

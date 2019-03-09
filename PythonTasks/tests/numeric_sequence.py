@@ -2,7 +2,6 @@ from models.numeric_sequence_algorithm import Sequence
 
 
 class TestSequence:
-
     def test_sequence_calculation_valid_output(self):
         sequence_output_list = [5, 6, 7]
         sequence_instance = Sequence(3, 25).sequence_calculation()

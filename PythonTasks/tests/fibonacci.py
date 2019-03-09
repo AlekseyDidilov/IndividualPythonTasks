@@ -2,7 +2,6 @@ from models.fibonacci_algorithm import FibonacciRange, FibonacciLength
 
 
 class TestFibonacciRange:
-
     def test_range_calculation_valid_output(self):
         fibonacci_output_list = [34, 55, 89, 144, 233, 377]
         fibonacci_instance = FibonacciRange(10, 15).range_calculation()
@@ -25,7 +24,6 @@ class TestFibonacciRange:
 
 
 class TestFibonacciLength:
-
     def test_length_calculation_valid_output(self):
         fibonacci_output_list = [144, 233, 377, 610, 987]
         fibonacci_instance = FibonacciLength(3).length_calculation()
@@ -42,6 +40,6 @@ class TestFibonacciLength:
         assert fibonacci_output_list != fibonacci_instance
 
     def test_length_calculation_in_output(self):
-        fibonacci_output_list = [144, 233, 377, 610, 'fib']
+        fibonacci_output_list = [144, 233, 377, 610, "fib"]
         fibonacci_instance = FibonacciLength(3).length_calculation()
         assert fibonacci_output_list != fibonacci_instance

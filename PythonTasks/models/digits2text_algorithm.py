@@ -2,7 +2,6 @@ from models.digits2text_numbers import DIGITS
 
 
 class TranslatorInText:
-
     def __init__(self, numbers: int):
         self._number = numbers
         self._translated_text = ""
@@ -15,8 +14,9 @@ class TranslatorInText:
         elif number == 0:
             self._translated_text = DIGITS["units"][number]
         else:
-            self._translated_text = DIGITS["tens"][number // 10] + \
-                               " " + DIGITS["units"][number % 10]
+            self._translated_text = (
+                DIGITS["tens"][number // 10] + " " + DIGITS["units"][number % 10]
+            )
         return self._translated_text
 
     def hundreds(self, number: int) -> str:
@@ -25,20 +25,27 @@ class TranslatorInText:
         if number % 100 == 0:
             self._translated_text += DIGITS["hundreds"][number // 100]
         else:
-            self._translated_text += DIGITS["hundreds"][number // 100] + \
-                                " " + self.less_hundred(number % 100)
+            self._translated_text += (
+                DIGITS["hundreds"][number // 100]
+                + " "
+                + self.less_hundred(number % 100)
+            )
         return self._translated_text
 
     def thousands(self, number: int) -> str:
         divided_thousand = number // 1000
-        if (10 <= divided_thousand) and (10 <= (int((str(divided_thousand))[-2] +
-                                                    (str(divided_thousand))[-1])) <= 19):
+        if (10 <= divided_thousand) and (
+            10 <= (int((str(divided_thousand))[-2] + (str(divided_thousand))[-1])) <= 19
+        ):
 
             thousand = self.hundreds(divided_thousand) + " тысяч"
         else:
             digit = int((str(divided_thousand))[-1])
-            thousand = self.hundreds(divided_thousand) + " тыся" + \
-                        DIGITS["thousands_ends"][digit]
+            thousand = (
+                self.hundreds(divided_thousand)
+                + " тыся"
+                + DIGITS["thousands_ends"][digit]
+            )
 
         thousand = thousand.replace("один ", "одна ")
         thousand = thousand.replace("два ", "две ")
@@ -55,7 +62,3 @@ class TranslatorInText:
         elif 1 <= number // 1000 <= 999:
             self._translated_text = self.thousands(number)
         return self._translated_text
-
-
-
-

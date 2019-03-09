@@ -1,8 +1,4 @@
-from models.validation_value import (
-    CheckRequirements,
-    GreaterThanZero,
-    LessOneMillion
-)
+from models.validation_value import CheckRequirements, GreaterThanZero, LessOneMillion
 from models.input_value import AskInput, IntInput
 from models.digits2text_algorithm import TranslatorInText
 

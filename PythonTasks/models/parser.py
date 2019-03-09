@@ -7,7 +7,7 @@ class Parser(object):
 
     def text_count(self, str_to_count) -> str:
         try:
-            with open(self.file, 'r') as f:
+            with open(self.file, "r") as f:
                 current_file = f.read()
                 count_occur = current_file.count(str_to_count)
                 print(count_occur)
@@ -17,7 +17,7 @@ class Parser(object):
 
     def preparing_replace(self, old_str, new_str):
         try:
-            with open(self.file, 'r') as f:
+            with open(self.file, "r") as f:
                 current_file = f.read()
             current_file = current_file.replace(old_str, new_str)
             return current_file
@@ -27,14 +27,14 @@ class Parser(object):
 
     def replace_text(self, current_file):
         try:
-            with open(self.file, 'w') as f:
+            with open(self.file, "w") as f:
                 f.write(current_file)
             print("Text has been changed")
         except FileNotFoundError:
             print("File hasn't been found")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     if len(sys.argv) == 3:
         new_parser = Parser(sys.argv[1])
         print(new_parser.text_count(sys.argv[2]))
@@ -44,5 +44,3 @@ if __name__ == '__main__':
         new_parser.replace_text(text_changing)
     else:
         print("Invalid data has been entered!")
-
-

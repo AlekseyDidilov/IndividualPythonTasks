@@ -1,8 +1,4 @@
-from models.validation_value import (
-    CheckRequirements,
-    GreaterThanZero,
-    LessOneMillion
-)
+from models.validation_value import CheckRequirements, GreaterThanZero, LessOneMillion
 from models.input_value import AskInput, IntInput
 from models.numeric_sequence_algorithm import Sequence
 
