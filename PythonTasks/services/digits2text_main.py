@@ -1,6 +1,6 @@
 from models.validation_value import CheckRequirements, GreaterThanZero, LessOneMillion
 from models.input_value import AskInput, IntInput
-from models.digits2text_algorithm import TranslatorInText
+from models.digits2text_algorithm import TranslateInText
 
 
 if __name__ == "__main__":
@@ -8,5 +8,5 @@ if __name__ == "__main__":
     check_number = CheckRequirements(GreaterThanZero(), LessOneMillion())
 
     if check_number.passed(required_number):
-        new_translation = TranslatorInText(required_number).numbers_to_text()
+        new_translation = TranslateInText(required_number).numbers_to_text()
         print(f"Converted value from number in text is: {new_translation}")

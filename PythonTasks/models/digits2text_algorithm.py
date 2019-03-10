@@ -1,7 +1,7 @@
 from models.digits2text_numbers import DIGITS
 
 
-class TranslatorInText:
+class TranslateInText:
     def __init__(self, numbers: int):
         self._number = numbers
         self._translated_text = ""
