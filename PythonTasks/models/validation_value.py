@@ -13,9 +13,19 @@ class GreaterThanZero(Requirements):
         return value > 0
 
 
+class NoLessThanZero(Requirements):
+    def passed(self, value: int) -> bool:
+        return value >= 0
+
+
 class LessOneMillion(Requirements):
     def passed(self, value: int) -> bool:
         return value < 1_000_000
+
+
+class LessOneMillionOne(Requirements):
+    def passed(self, value: int) -> bool:
+        return value <= 1_000_000
 
 
 class LessOneHundred(Requirements):
