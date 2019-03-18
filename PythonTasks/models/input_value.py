@@ -29,4 +29,8 @@ class IntInput(Input):
         self._origin = origin
 
     def value(self) -> Any:
-        return int(self._origin.value())
+        while True:
+            try:
+                return int(self._origin.value())
+            except ValueError:
+                print("Incorrect data, input must be integer")

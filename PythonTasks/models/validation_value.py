@@ -80,7 +80,7 @@ class CheckRequirements(Requirements):
             if not requirement.passed(*value):
                 print(
                     f"{requirement.__class__.__name__} is failed."
-                    f"Please, run program again!"
+                    f" Please, run program again!"
                 )
                 return False
         return True
